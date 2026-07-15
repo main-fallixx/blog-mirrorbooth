@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LUMIRROR Journal — The Mirror Photo Booth Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/mirror.css">
+</head>
+<body>
+
+<!-- ICON SPRITE -->
+<svg width="0" height="0" style="position:absolute">
+  <symbol id="i-mirror" viewBox="0 0 24 24"><rect x="6" y="3" width="12" height="18" rx="4"/><path d="M9 8h6M9 12h6M9 16h4"/></symbol>
+  <symbol id="i-camera" viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></symbol>
+  <symbol id="i-frame" viewBox="0 0 24 24"><path d="M4 8V5a1 1 0 0 1 1-1h3M20 8V5a1 1 0 0 1-1-1h-3M4 16v3a1 1 0 0 0 1 1h3M20 16v3a1 1 0 0 1-1 1h-3"/></symbol>
+  <symbol id="i-tap" viewBox="0 0 24 24"><path d="M9 12V6a1.5 1.5 0 0 1 3 0v5"/><path d="M12 11V5a1.5 1.5 0 0 1 3 0v6"/><path d="M15 11V7a1.5 1.5 0 0 1 3 0v7c0 3-2 6-6 6s-5-2-6.5-4.5C4.6 13.8 4 12.6 4 11.6c0-1 .8-1.8 1.8-1.6.6.1 1 .5 1.2 1l1 1.8"/></symbol>
+  <symbol id="i-print" viewBox="0 0 24 24"><path d="M6 9V3h12v6M6 18H4a1 1 0 0 1-1-1v-6a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1h-2"/><rect x="6" y="14" width="12" height="7"/></symbol>
+  <symbol id="i-share" viewBox="0 0 24 24"><circle cx="6" cy="12" r="2.3"/><circle cx="18" cy="6" r="2.3"/><circle cx="18" cy="18" r="2.3"/><path d="M8 10.8l8-4.6M8 13.2l8 4.6"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M4 12l6 6L20 6"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></symbol>
+  <symbol id="i-scan" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M7 4l14 8-14 8z"/></symbol>
+  <symbol id="i-route" viewBox="0 0 24 24"><circle cx="5" cy="6" r="2"/><circle cx="19" cy="18" r="2"/><path d="M5 8v3a4 4 0 0 0 4 4h6a4 4 0 0 1 4 3"/></symbol>
+  <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M5.6 5.6l2.8 2.8M15.6 15.6l2.8 2.8M18.4 5.6l-2.8 2.8M8.4 15.6l-2.8 2.8"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></symbol>
+</svg>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="brand">
+      <div class="brand-mark"><svg viewBox="0 0 24 24"><use href="#i-mirror"/></svg></div>
+      LUMIRROR <span class="mono" style="color:var(--muted); font-weight:400; font-size:12px; margin-left:2px;">/journal</span>
+    </div>
+    <div class="nav-links">
+      <a href="#history">History</a>
+      <a href="#types">Types</a>
+      <a href="#live">Live Demo</a>
+      <a href="#choosing">Choosing One</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <a class="nav-cta" href="#live">Book a mirror ↗</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow"><span class="dot"></span> LUMIRROR JOURNAL · MIRROR PHOTO BOOTH GUIDE</span>
+      <h1>The mirror that<br> remembers <span>every smile.</span></h1>
+      <p class="lead">A full-length mirror that lights up, talks guests through a pose, and hands back a print — the mirror photo booth turns an ordinary reflection into the most talked-about corner of any event.</p>
+      <div class="meta-row">
+        <span><svg class="icon" style="width:14px;height:14px"><use href="#i-clock"/></svg> 10 min read</span>
+        <span><svg class="icon" style="width:14px;height:14px"><use href="#i-mirror"/></svg> Event Tech</span>
+        <span><svg class="icon" style="width:14px;height:14px"><use href="#i-sparkle"/></svg> Buyer's Guide</span>
+      </div>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#live">Try the live mirror <svg class="icon" style="width:16px;height:16px"><use href="#i-play"/></svg></a>
+        <a class="btn btn-ghost" href="#types">Explore the types</a>
+      </div>
+      <div class="tag-row">
+        <span class="pill">#MirrorBooth</span>
+        <span class="pill">#WeddingTech</span>
+        <span class="pill">#EventEntertainment</span>
+      </div>
+    </div>
+
+    <div class="mirror-stage" id="heroStage">
+      <div class="mirror-float">
+        <div class="mirror-tilt" id="heroTilt">
+          <div class="mirror-frame">
+            <span class="led-dot"></span><span class="led-dot"></span><span class="led-dot"></span><span class="led-dot"></span>
+            <div class="mirror-glass" id="heroGlass" onclick="triggerCapture('hero')">
+              <div class="glass-sheen"></div>
+              <svg class="reflection-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><use href="#i-user"/></svg>
+              <div class="status-pill" id="heroPill">TAP TO CAPTURE</div>
+              <div class="countdown" id="heroCountdown"></div>
+              <div class="flash-overlay" id="heroFlash"></div>
+              <div class="captured-badge" id="heroCaptured"><svg class="icon" style="width:14px;height:14px"><use href="#i-check"/></svg> Captured!</div>
+            </div>
+            <div class="print-slot"><div class="print-strip" id="heroPrint"></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="mirror-caption mono">↗ move your cursor to tilt the glass</div>
+      <div class="capture-hint" onclick="triggerCapture('hero')" style="cursor:pointer;"><svg class="icon" style="width:14px;height:14px"><use href="#i-camera"/></svg> Click the mirror to see it capture</div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- DEFINITION -->
+<section id="definition">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow pink"><span class="dot"></span> Definition</span>
+      <h2>So, what exactly is a mirror photo booth?</h2>
+      <p>Take away the branding and the concept is elegantly simple: a real mirror that hides a camera, a touchscreen, and a printer behind reflective, two-way glass.</p>
+    </div>
+    <div class="def-card reveal">
+      <div>
+        <h3>A mirror that lights up and talks back.</h3>
+        <p>A mirror photo booth looks like an ordinary full-length mirror until a guest steps in front of it. Sensors wake the unit, and the glass — which reflects like normal glass at rest — reveals a hidden display underneath: welcome animations, pose prompts, and countdown numbers all appear to float directly on top of the guest's own reflection.</p>
+        <p style="margin-top:14px;">When it's time to shoot, a flash fires from behind the two-way glass, a camera hidden in the frame captures the moment, and a printed strip glides out moments later — all without the guest ever seeing the machinery at work.</p>
+      </div>
+      <ul class="def-list">
+        <li><svg class="icon" style="width:18px;height:18px"><use href="#i-check"/></svg> Two-way mirror glass hiding a camera and printer</li>
+        <li><svg class="icon" style="width:18px;height:18px"><use href="#i-check"/></svg> Touch-responsive or motion-activated interface</li>
+        <li><svg class="icon" style="width:18px;height:18px"><use href="#i-check"/></svg> On-glass pose prompts and countdowns</li>
+        <li><svg class="icon" style="width:18px;height:18px"><use href="#i-check"/></svg> Custom digital overlays, filters, and signatures</li>
+        <li><svg class="icon" style="width:18px;height:18px"><use href="#i-check"/></svg> Instant printed keepsakes and digital sharing</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- HISTORY -->
+<section id="history">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow"><span class="dot"></span> History</span>
+      <h2>How an ordinary mirror learned to take photos</h2>
+      <p>The mirror photo booth is a fairly recent invention, but it borrows a trick that's much older: the two-way mirror.</p>
+    </div>
+    <div class="timeline reveal">
+      <div class="t-item">
+        <div class="t-dot"></div>
+        <div class="t-year">1970s</div>
+        <h4>Two-way glass enters everyday use</h4>
+        <p>Half-silvered "two-way" mirror glass — reflective on one side, transparent from the other when lit correctly — becomes common in studios, interrogation rooms, and department store fitting areas.</p>
+      </div>
+      <div class="t-item">
+        <div class="t-dot"></div>
+        <div class="t-year">1999</div>
+        <h4>The first mirror photo booths are patented</h4>
+        <p>Inventors combine two-way glass with a hidden camera and printer, creating the earliest mirror booths for trade shows and novelty photo stands.</p>
+      </div>
+      <div class="t-item">
+        <div class="t-dot"></div>
+        <div class="t-year">2008</div>
+        <h4>Wedding vendors adopt the mirror as an upgrade</h4>
+        <p>Event rental companies begin offering mirror booths as a premium alternative to boxy enclosed booths, prized for their sleek, furniture-like look.</p>
+      </div>
+      <div class="t-item">
+        <div class="t-dot"></div>
+        <div class="t-year">2013</div>
+        <h4>The glass itself becomes touchable</h4>
+        <p>Capacitive touch layers are built directly into the mirror surface, letting guests tap their own reflection to start a session, choose filters, or sign their name.</p>
+      </div>
+      <div class="t-item">
+        <div class="t-dot"></div>
+        <div class="t-year">2017</div>
+        <h4>LED rings and branded overlays go mainstream</h4>
+        <p>Chasing LED border lighting and fully customizable on-glass frames turn the mirror booth into a branding tool as much as an entertainment piece.</p>
+      </div>
+      <div class="t-item">
+        <div class="t-dot"></div>
+        <div class="t-year">2020</div>
+        <h4>AI pose guidance arrives</h4>
+        <p>Computer vision built into the glass starts coaching guests into flattering poses in real time, well before the countdown even begins.</p>
+      </div>
+      <div class="t-item">
+        <div class="t-dot"></div>
+        <div class="t-year">Today</div>
+        <h4>AR overlays and instant sharing</h4>
+        <p>Modern mirror booths layer animated AR effects onto a guest's live reflection and push finished shots straight to a phone within seconds of the flash.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- HOW IT WORKS -->
+<section id="how">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow pink"><span class="dot"></span> Mechanics</span>
+      <h2>How a mirror photo booth actually works</h2>
+      <p>The illusion is simple to describe and satisfying to watch happen in real time.</p>
+    </div>
+    <div class="steps reveal">
+      <div class="step-card">
+        <div class="step-num mono">01</div>
+        <div class="step-icon"><svg class="icon"><use href="#i-scan"/></svg></div>
+        <h4>The glass wakes up</h4>
+        <p>Motion sensors notice a guest step into frame and fade in the welcome interface over their reflection.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num mono">02</div>
+        <div class="step-icon"><svg class="icon"><use href="#i-tap"/></svg></div>
+        <h4>A tap starts the session</h4>
+        <p>Guests tap their own reflection to begin, choose a filter or frame, and get a quick pose prompt.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num mono">03</div>
+        <div class="step-icon"><svg class="icon"><use href="#i-clock"/></svg></div>
+        <h4>The countdown runs</h4>
+        <p>Large numbers count down directly on the glass, building anticipation for the shot.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num mono">04</div>
+        <div class="step-icon"><svg class="icon"><use href="#i-bolt"/></svg></div>
+        <h4>A hidden flash fires</h4>
+        <p>A flash behind the two-way glass fires, and the concealed camera captures the frame.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num mono">05</div>
+        <div class="step-icon"><svg class="icon"><use href="#i-print"/></svg></div>
+        <h4>It prints or shares</h4>
+        <p>A keepsake print glides out below the glass, or the shot lands on a guest's phone through a quick scan.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TYPES -->
+<section id="types">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow"><span class="dot"></span> Field Guide</span>
+      <h2>Six kinds of mirror photo booths</h2>
+      <p>"Mirror booth" now covers a real range of hardware, from compact tabletop mirrors to floor-to-ceiling runway glass.</p>
+    </div>
+    <div class="type-grid reveal">
+      <div class="type-card">
+        <div class="type-icon"><svg class="icon"><use href="#i-mirror"/></svg></div>
+        <h4>Classic Two-Way Mirror Booths</h4>
+        <p>The original style — a camera and printer hidden entirely behind reflective glass, indistinguishable from a real mirror at rest.</p>
+      </div>
+      <div class="type-card">
+        <div class="type-icon"><svg class="icon"><use href="#i-tap"/></svg></div>
+        <h4>Touchscreen Interactive Mirrors</h4>
+        <p>Guests tap the glass itself to start a session, pick filters, and sign their name with a fingertip.</p>
+      </div>
+      <div class="type-card">
+        <div class="type-icon"><svg class="icon"><use href="#i-camera"/></svg></div>
+        <h4>Magic Selfie Mirrors</h4>
+        <p>Compact tabletop or portable versions built for smaller spaces, cocktail hours, and tight footprints.</p>
+      </div>
+      <div class="type-card">
+        <div class="type-icon"><svg class="icon"><use href="#i-frame"/></svg></div>
+        <h4>Full-Length Runway Mirrors</h4>
+        <p>Floor-to-ceiling glass designed for full-outfit shots and groups of guests posing together.</p>
+      </div>
+      <div class="type-card">
+        <div class="type-icon"><svg class="icon"><use href="#i-sparkle"/></svg></div>
+        <h4>LED Ring Mirrors</h4>
+        <p>Bordered by chasing ring lights and studio-grade illumination for a flattering glow in any room.</p>
+      </div>
+      <div class="type-card">
+        <div class="type-icon"><svg class="icon"><use href="#i-route"/></svg></div>
+        <h4>Roaming Mirror Carts</h4>
+        <p>Wheeled, battery-powered mirrors that travel through a venue instead of waiting for guests to find them.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- LIVE SETUP / SIGNATURE + VIDEO -->
+<section id="live">
+  <div class="wrap">
+    <div class="live-wrap reveal">
+      <div class="live-top">
+        <div>
+          <span class="eyebrow pink"><span class="dot"></span> Live Setup</span>
+          <h2 style="margin-top:16px; font-size:clamp(24px,3.2vw,32px);">A mirror booth, live at an event</h2>
+          <p style="color:var(--muted); max-width:520px; margin-top:12px;">Chasing LED trim, a glass surface that genuinely reflects, and a countdown that fires right on the mirror — this is what a modern mirror photo booth feels like in the room. Give it a click.</p>
+          <div class="live-badges">
+            <span class="badge"><svg><use href="#i-mirror"/></svg> Two-way reflective glass</span>
+            <span class="badge"><svg><use href="#i-bolt"/></svg> Instant flash capture</span>
+            <span class="badge"><svg><use href="#i-print"/></svg> Live prints</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="live-stage-outer">
+        <div class="mirror-stage" id="liveStage" style="height:420px;">
+          <div class="mirror-float" style="animation-duration:6.5s;">
+            <div class="mirror-tilt" id="liveTilt" style="width:210px; height:360px;">
+              <div class="mirror-frame">
+                <span class="led-dot"></span><span class="led-dot"></span><span class="led-dot"></span><span class="led-dot"></span>
+                <div class="mirror-glass" id="liveGlass" onclick="triggerCapture('live')">
+                  <div class="glass-sheen"></div>
+                  <svg class="reflection-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" style="width:62px;height:62px;"><use href="#i-user"/></svg>
+                  <div class="status-pill" id="livePill">TAP TO CAPTURE</div>
+                  <div class="countdown" id="liveCountdown" style="font-size:64px;"></div>
+                  <div class="flash-overlay" id="liveFlash"></div>
+                  <div class="captured-badge" id="liveCaptured"><svg class="icon" style="width:14px;height:14px"><use href="#i-check"/></svg> Captured!</div>
+                </div>
+                <div class="print-slot"><div class="print-strip" id="livePrint" style="height:56px;"></div></div>
+              </div>
+            </div>
+          </div>
+          <div class="capture-hint" onclick="triggerCapture('live')" style="cursor:pointer; margin-top:14px;"><svg class="icon" style="width:14px;height:14px"><use href="#i-camera"/></svg> Click to trigger a capture</div>
+        </div>
+      </div>
+
+      <div class="video-shell">
+        <div class="ratio">
+          <!-- Demo video — swap the src below with your own mirror photo booth reel -->
+          <iframe src="https://www.youtube.com/embed/aqz-KE-bpKQ" title="Mirror photo booth demo video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="video-caption">
+          <span>LUMIRROR · Live Session Reel</span>
+          <span class="live-dot"><span class="dot"></span> DEMO</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OCCASIONS -->
+<section id="occasions">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow"><span class="dot"></span> Occasions</span>
+      <h2>Where a mirror booth fits right in</h2>
+    </div>
+    <div class="chip-cloud reveal">
+      <span class="chip">Weddings</span>
+      <span class="chip">Quinceañeras</span>
+      <span class="chip">Corporate Galas</span>
+      <span class="chip">Prom Nights</span>
+      <span class="chip">Store Openings</span>
+      <span class="chip">Birthday Parties</span>
+      <span class="chip">Anniversary Parties</span>
+      <span class="chip">Fashion Shows</span>
+      <span class="chip">Holiday Parties</span>
+      <span class="chip">Red Carpet Events</span>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES + BUSINESS -->
+<section id="features">
+  <div class="wrap two-col">
+    <div class="reveal">
+      <span class="eyebrow pink"><span class="dot"></span> Built-in Intelligence</span>
+      <h2 style="margin-top:16px; font-size:26px;">What makes it a "smart" mirror</h2>
+      <p style="color:var(--muted); margin-top:12px; font-size:15px;">The features that separate a real mirror booth from a screen bolted to a frame.</p>
+      <ul class="feature-list" style="margin-top:24px;">
+        <li>
+          <div class="f-icon"><svg class="icon" style="width:17px;height:17px"><use href="#i-tap"/></svg></div>
+          <div><h4>Touch-responsive glass</h4><p>Guests tap directly on the reflective surface to start, choose filters, or sign a keepsake.</p></div>
+        </li>
+        <li>
+          <div class="f-icon"><svg class="icon" style="width:17px;height:17px"><use href="#i-sparkle"/></svg></div>
+          <div><h4>Custom filters and overlays</h4><p>Themed frames, animations, and doodle tools layer directly onto the live reflection.</p></div>
+        </li>
+        <li>
+          <div class="f-icon"><svg class="icon" style="width:17px;height:17px"><use href="#i-bolt"/></svg></div>
+          <div><h4>LED ring lighting control</h4><p>Chasing or steady lighting around the frame can be tuned to match the mood of the room.</p></div>
+        </li>
+        <li>
+          <div class="f-icon"><svg class="icon" style="width:17px;height:17px"><use href="#i-route"/></svg></div>
+          <div><h4>Motion-based wake-up</h4><p>The unit senses an approaching guest and comes to life before they even reach it.</p></div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="reveal">
+      <span class="eyebrow"><span class="dot"></span> For Brands &amp; Business</span>
+      <h2 style="margin-top:16px; font-size:26px;">More than a novelty — a centerpiece</h2>
+      <p style="color:var(--muted); margin-top:12px; font-size:15px;">Companies book mirror booths as much for the visual impact as for the keepsakes guests take home.</p>
+      <ul class="feature-list" style="margin-top:24px;">
+        <li>
+          <div class="f-icon"><svg class="icon" style="width:17px;height:17px"><use href="#i-share"/></svg></div>
+          <div><h4>Instant social sharing</h4><p>Every capture can post straight to a guest's phone or a live event screen within seconds.</p></div>
+        </li>
+        <li>
+          <div class="f-icon"><svg class="icon" style="width:17px;height:17px"><use href="#i-frame"/></svg></div>
+          <div><h4>Branded frame templates</h4><p>Logos, colors, and taglines can appear on every printed strip and digital share.</p></div>
+        </li>
+        <li>
+          <div class="f-icon"><svg class="icon" style="width:17px;height:17px"><use href="#i-user"/></svg></div>
+          <div><h4>Guest data capture</h4><p>Optional opt-in flows collect emails or social handles in exchange for a print.</p></div>
+        </li>
+        <li>
+          <div class="f-icon"><svg class="icon" style="width:17px;height:17px"><use href="#i-mirror"/></svg></div>
+          <div><h4>A genuine visual centerpiece</h4><p>Its furniture-like look means it doubles as décor even when no one is using it.</p></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- CHOOSING -->
+<section id="choosing">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow pink"><span class="dot"></span> Buyer's Guide</span>
+      <h2>Choosing the right mirror booth for your event</h2>
+      <p>Not every mirror suits every room. A few things worth checking before booking one.</p>
+    </div>
+    <div class="two-col reveal">
+      <div class="check-card">
+        <h3>Before you book</h3>
+        <div class="check-item"><svg class="icon"><use href="#i-check"/></svg><span>Guest count and how long the line is likely to run</span></div>
+        <div class="check-item"><svg class="icon"><use href="#i-check"/></svg><span>Floor space and ceiling height for a full-length unit</span></div>
+        <div class="check-item"><svg class="icon"><use href="#i-check"/></svg><span>Indoor vs. outdoor power needs</span></div>
+        <div class="check-item"><svg class="icon"><use href="#i-check"/></svg><span>Printed keepsakes vs. digital-only sharing</span></div>
+        <div class="check-item"><svg class="icon"><use href="#i-check"/></svg><span>Whether an on-site attendant is included</span></div>
+      </div>
+      <div class="check-card">
+        <h3>What a great setup looks like</h3>
+        <div class="check-item"><svg class="icon"><use href="#i-check"/></svg><span>A genuine glass finish, not a printed reflective decal</span></div>
+        <div class="check-item"><svg class="icon"><use href="#i-check"/></svg><span>Even, flattering LED lighting with no harsh glare</span></div>
+        <div class="check-item"><svg class="icon"><use href="#i-check"/></svg><span>A fast printer with no lag between flash and keepsake</span></div>
+        <div class="check-item"><svg class="icon"><use href="#i-check"/></svg><span>Custom branded overlays across frames and prints</span></div>
+        <div class="check-item"><svg class="icon"><use href="#i-check"/></svg><span>Transparent pricing with a clear setup schedule</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FUN FACTS -->
+<section id="facts">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow"><span class="dot"></span> Fun Facts</span>
+      <h2>A few things worth knowing</h2>
+    </div>
+    <div class="fact-grid reveal">
+      <div class="fact-card">
+        <div class="fact-num">6ft+</div>
+        <p>Full-length runway mirrors are often taller than six feet, built to capture a whole outfit — or a whole group — in one shot.</p>
+      </div>
+      <div class="fact-card">
+        <div class="fact-num">&lt;3s</div>
+        <p>On a well-tuned mirror booth, the gap between a tap and the flash firing can be under three seconds.</p>
+      </div>
+      <div class="fact-card">
+        <div class="fact-num">2-way</div>
+        <p>The glass reflects like a normal mirror until lit from behind — the same trick used in studio observation rooms.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow pink"><span class="dot"></span> FAQ</span>
+      <h2>Frequently asked questions</h2>
+    </div>
+    <div class="reveal" style="max-width:760px;">
+      <div class="faq-item">
+        <button class="faq-q">Can guests actually see themselves before the photo?<span class="plus">+</span></button>
+        <div class="faq-a"><p>Yes — the glass shows a live reflection the entire time, with prompts and graphics appearing to float directly on top of it.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Does a mirror booth need a wall behind it?<span class="plus">+</span></button>
+        <div class="faq-a"><p>No, most units are freestanding on a weighted base, though a little wall clearance helps with cabling and stability.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">How much space does a full-length mirror booth need?<span class="plus">+</span></button>
+        <div class="faq-a"><p>Enough clearance for guests to step back and pose fully — typically a few feet of open floor in front of the glass.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Can it be personalized with a name or company logo?<span class="plus">+</span></button>
+        <div class="faq-a"><p>Yes — most providers offer custom on-glass overlays, frame colors, and branded print templates.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section>
+  <div class="wrap">
+    <div class="cta-band reveal">
+      <h2>Ready to bring a mirror photo booth to your event?</h2>
+      <p>From compact selfie mirrors to full-length runway glass, there's a mirror booth built for every room and every guest list.</p>
+      <a class="btn btn-primary" href="#live">Explore live setups</a>
+    </div>
+  </div>
+</section>
+
+<!-- MORE ARTICLES -->
+<section>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow"><span class="dot"></span> More from LUMIRROR</span>
+      <h2 style="font-size:24px;">Keep exploring</h2>
+    </div>
+    <div class="more-grid reveal">
+      <div class="more-card">
+        <span class="eyebrow pink" style="font-size:10px;">Trends</span>
+        <h4 style="margin-top:12px;">On-Glass AR Filters: The New Standard for Mirror Booths</h4>
+      </div>
+      <div class="more-card">
+        <span class="eyebrow" style="font-size:10px;">Planning</span>
+        <h4 style="margin-top:12px;">How Much Floor Space Does a Runway Mirror Really Need?</h4>
+      </div>
+      <div class="more-card">
+        <span class="eyebrow pink" style="font-size:10px;">Production</span>
+        <h4 style="margin-top:12px;">Mirror Booths vs. Robot Booths: Which Wins the Room?</h4>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="brand">
+        <div class="brand-mark"><svg viewBox="0 0 24 24"><use href="#i-mirror"/></svg></div>
+        LUMIRROR
+      </div>
+      <div class="social-row">
+        <a href="#" aria-label="Instagram"><svg class="icon" style="width:17px;height:17px"><use href="#i-camera"/></svg></a>
+        <a href="#" aria-label="Share"><svg class="icon" style="width:17px;height:17px"><use href="#i-share"/></svg></a>
+        <a href="#" aria-label="Watch"><svg class="icon" style="width:17px;height:17px"><use href="#i-play"/></svg></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 LUMIRROR Journal — A living guide to mirror photo booth culture.</span>
+      <span>Built for events that shine.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script/mirror.js"></script>
+</body>
+</html>
